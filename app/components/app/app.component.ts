@@ -11,6 +11,7 @@ import {Tires} from '../../services/tires/tires.service';
     template: `
                 <h1>My First Angular 2 App</h1>
                 {{color}}
+                {{promise | async}}
                 <my-component></my-component>
                 <todos></todos>
               `, 
@@ -22,6 +23,11 @@ export class AppComponent {
 
     constructor(@Inject(Car) c:any){
         this.color = c.body.color;
+        this.promise = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                resolve('Hey, i am a promise')
+            }, 2000);
+        });
 
     }
 }
