@@ -19,7 +19,8 @@ import {Tires} from '../../services/tires/tires.service';
 })
 export class AppComponent {
     color: string;
-    constructor(@Inject(Car) c){
+
+    constructor(@Inject(Car) c:any){
         this.color = c.body.color;
 
     }

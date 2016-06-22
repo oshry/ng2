@@ -22,11 +22,11 @@ import {Pipe, PipeTransform} from '@angular/core';
 
 })
 export class MyComponent {
-    name;
-    imageUrl;
-    isActive;
-    isActive1;
-    clickMessage;
+    name:any;
+    imageUrl:any;
+    isActive:any;
+    isActive1:any;
+    clickMessage:any;
     constructor(){
         this.name = 'John Doe';//interpolation binding
         this.imageUrl = 'http://lorempixel.com/400/200';// property binding
@@ -38,7 +38,7 @@ export class MyComponent {
         this.clickMessage = 'Hello World';
     }
     //ng model change
-    setUpperCase(e){
+    setUpperCase(e:any){
         this.name = e.toUpperCase();
     }
 }

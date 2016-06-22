@@ -40,12 +40,12 @@ import {TodoService} from '../../services/todo/todo.service';
     providers: [TodoService]
 })
 export class TodosComponent {
-    todos;
-    name;
-    todosArr;
-    newTodo;
-    errorMsg;
-    successMsg;
+    todos:any;
+    name:any;
+    todosArr:any;
+    newTodo:any;
+    errorMsg:any;
+    successMsg:any;
     constructor(private todoService: TodoService){
 
          this.todos = 'hello';
@@ -67,7 +67,7 @@ export class TodosComponent {
         }
 
     }
-    removeTodo(todo){
+    removeTodo(todo:any){
         this.todosArr.splice(this.todosArr.indexOf(todo), 1);
     }
     resetTodo(){

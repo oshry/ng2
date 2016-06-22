@@ -3,7 +3,7 @@ export class TodoService{
     getTodos(){
         return this.todosArr;
     }
-    addTodo(newOne){
+    addTodo(newOne:any){
         this.todosArr.push(newOne);
     }
 }
