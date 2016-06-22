@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {TodoService} from '../../services/todo/todo.service';
 @Component({
     selector: 'todos',
     template: `
@@ -36,6 +37,7 @@ import {Component} from '@angular/core';
                 <button (click)="resetTodo()">Clear List</button>
                 <br>  
               `,
+    providers: [TodoService]
 })
 export class TodosComponent {
     todos;
@@ -44,17 +46,22 @@ export class TodosComponent {
     newTodo;
     errorMsg;
     successMsg;
-    constructor(){
+    constructor(private todoService: TodoService){
+
          this.todos = 'hello';
          this.name = 'pery';
-         this.todosArr = ['Wash Dishes', 'Pickup Kids', 'Eat Dinner'];
+         //this.todosArr = ['Wash Dishes', 'Pickup Kids', 'Eat Dinner'];
+         //with service
+         this.todosArr = todoService.getTodos();
     }
     addTodo(){
         if(!this.newTodo || this.newTodo.length < 3){
             this.successMsg = '';
             this.errorMsg = 'Todo must be at least 3 characters';
         }else{
-            this.todosArr.push(this.newTodo);
+            //with service
+            this.todoService.addTodo(this.newTodo.trim());
+            //this.todosArr.push(this.newTodo);
             this.errorMsg = '';
             this.successMsg = 'Great Success';
         }

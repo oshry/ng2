@@ -135,6 +135,9 @@ nav a.router-link-active {
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+.isActive{
+  background-color: #0000AA;
+}
 
 /* everywhere else */
 * { 
